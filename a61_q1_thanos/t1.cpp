@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <tuple>
 
 using namespace std;
 vector<int> military_base;
@@ -20,4 +21,26 @@ void get_inputs() {
   military_base.resize(military_base_size);
 }
 
-void dc() {}
+void fill_avengers() {
+  int index;
+  for (int i = 0; i < k; ++i) {
+    cin >> index;
+    military_base[index - 1]++;
+  };
+}
+
+int dc(int left, int right) {
+  if (left == right) {
+    if (military_base[left] > 0)
+      return B * military_base[left];
+    else
+      return A;
+  }
+
+  return dc()
+}
+
+int main() {
+  get_inputs();
+  fill_avengers();
+}
